@@ -16,9 +16,6 @@ client = wrap_openai(OpenAI())
 
 @traceable
 def prompt_compliance_evaluator(run: Run, example: Example) -> dict:
-    print(example.inputs)
-    print(example.outputs)
-
     inputs = example.inputs['input']
     outputs = example.outputs['output']
 
@@ -83,10 +80,10 @@ def prompt_compliance_evaluator(run: Run, example: Example) -> dict:
         }
 
 # The name or UUID of the LangSmith dataset to evaluate on.
-data = "llm_project_1_chat"
+data = "project 1"
 
 # A string to prefix the experiment name with.
-experiment_prefix = "Python tutoring prompt compliance"
+experiment_prefix = "Python project 1 prompt compliance"
 
 # List of evaluators to score the outputs of target task
 evaluators = [
@@ -100,5 +97,5 @@ results = evaluate(
     evaluators=evaluators,
     experiment_prefix=experiment_prefix,
 )
-print("hello")
+
 print(results)

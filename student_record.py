@@ -1,8 +1,8 @@
 import os
-from langsmith.wrappers import wrap_openai
-from langsmith import traceable
+#from langsmith.wrappers import wrap_openai
+#from langsmith import traceable
 
-@traceable
+#@traceable
 def read_student_record(file_path):
     if not os.path.exists(file_path):
         print(f"File {file_path} does not exist. Creating a new file with default content.")
@@ -27,12 +27,12 @@ _No alerts yet._
     with open(file_path, "r") as file:
         return file.read()
     
-@traceable
+#@traceable
 def write_student_record(file_path, content):
     with open(file_path, "w") as file:
         file.write(content)
 
-@traceable
+#@traceable
 def format_student_record(student_info, alerts, knowledge):
     record = "# Student Record\n\n## Student Information\n"
     for key, value in student_info.items():
@@ -51,7 +51,7 @@ def format_student_record(student_info, alerts, knowledge):
     
     return record
 
-@traceable
+#@traceable
 def parse_student_record(markdown_content):
     student_info = {}
     alerts = []
